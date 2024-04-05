@@ -61,7 +61,7 @@ class Trainer(object):
         self.model.train()
         pbar = tqdm(range(num_iter))
         for iter in pbar:
-            inputs = train_loader_iter.next()
+            inputs = next(train_loader_iter)
 
             for k, v in inputs.items():  # load inputs to device.
                 if type(v) == list:

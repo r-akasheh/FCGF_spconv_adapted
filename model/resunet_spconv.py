@@ -73,7 +73,7 @@ class FCGF_spconv(nn.Module):
         self.skip_x = []
         ##### encoder #####
         self.conv1 = spconv.SparseSequential(
-            spconv.SubMConv3d(1, 32, kernel_size=5, stride=1, dilation=1, bias=False, indice_key="subm0"),
+            spconv.SubMConv3d(1, kernel_size=5, out_channels=32, stride=1, dilation=1, bias=False, indice_key="subm0"),
         )
         self.norm1 = nn.BatchNorm1d(32, momentum=0.01, eps=1e-3)
         self.block1 = SparseBasicBlock(inplanes=32, planes=32, indice_key="resnet1")

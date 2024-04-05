@@ -13,6 +13,7 @@ from torch import optim
 from lib.trainer import Trainer
 import pdb
 
+
 experiment_id = time.strftime('%m%d%H%M')
 
 if __name__ == '__main__':
@@ -22,10 +23,11 @@ if __name__ == '__main__':
     parser.add_argument('--phase', type=str, default='train', choices=['train', 'val'])
     parser.add_argument('--max_epoch', type=int, default=100)
     parser.add_argument('--pretrain', type=str, default='')
-    parser.add_argument('--num_workers', type=int, default=6)
+    parser.add_argument('--num_workers', type=int, default=0)
     parser.add_argument('--verbose_freq', type=float, default=100)
     ### Data Configuration
-    parser.add_argument('--root', type=str, default='/home/ghn/data/FCGF_data/threedmatch')
+    parser.add_argument('--root-test', type=str, default='dataset/threedmatch/FCGF_data/threedmatch_test')
+    parser.add_argument('--root', type=str, default='dataset/threedmatch/FCGF_data/threedmatch')
     parser.add_argument('--voxel_size', type=float, default=0.025)
     parser.add_argument('--search_radius', type=float, default=0.0375)
     parser.add_argument('--rot_factor', type=int, default=4)

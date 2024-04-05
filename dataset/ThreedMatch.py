@@ -21,6 +21,7 @@ class ThreeDMatchDataset(Dataset):
     def __init__(self, config, split, data_augmentation=True):
         super(ThreeDMatchDataset, self).__init__()
         self.base_dir = config.root
+        self.base_dir_test = config.root_test
         self.data_augmentation = data_augmentation
         self.config = config
         self.voxel_size = config.voxel_size
@@ -32,9 +33,9 @@ class ThreeDMatchDataset(Dataset):
         subset_names = open(DATA_FILES[split]).read().split()
         self.files = []
         for name in subset_names:
-            fname = name + "*%.2f.txt" % 0.30
-            fnames_txt = glob.glob(self.base_dir + "/" + fname)
-            assert len(fnames_txt) > 0, f"Make sure that the path {self.base_dir} has data {fname}"
+            fname = name + "@seq-01-%.2f.txt" % 0.30
+            fnames_txt = glob.glob(self.base_dir_test + "/" + fname)
+            assert len(fnames_txt) > 0, f"Make sure that the path {self.base_dir_test} has data {fname}"
             for fname_txt in fnames_txt:
                 with open(fname_txt) as f:
                     content = f.readlines()
@@ -216,6 +217,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', type=str, default='/home/ghn/data/FCGF_data/threedmatch')
+    parser.add_argument('--root-test', type=str, default='/home/ghn/data/FCGF_data/threedmatch')
     parser.add_argument('--voxel_size', type=float, default=0.025)
     parser.add_argument('--search_radius', type=float, default=0.0375)
     parser.add_argument('--augment_noise', type=float, default=0.005)

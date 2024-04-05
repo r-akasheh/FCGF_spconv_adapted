@@ -8,6 +8,7 @@ import torch
 import copy
 from model.resunet_spconv import FCGF_spconv
 
+
 def spconv_vox(src_pcd, tgt_pcd, voxel_size):
     src_xyzmin, src_xyzmax = np.floor(np.percentile(src_pcd, 0, axis=0)), np.ceil(np.percentile(src_pcd, 100, axis=0))
     tgt_xyzmin, tgt_xyzmax = np.floor(np.percentile(tgt_pcd, 0, axis=0)), np.ceil(np.percentile(tgt_pcd, 100, axis=0))
@@ -43,6 +44,7 @@ def spconv_vox(src_pcd, tgt_pcd, voxel_size):
 
     return src_xyz, tgt_xyz, src_voxels_coords, tgt_voxels_coords, src_shape, tgt_shape
 
+
 def visualize_registration(src_ply, tgt_ply, pred_trans):
     src_ply.paint_uniform_color([0, 0.651, 0.929])
     tgt_ply.paint_uniform_color([1, 0.706, 0])
@@ -77,6 +79,7 @@ def visualize_registration(src_ply, tgt_ply, pred_trans):
     del vis1
     del vis2
 
+
 if __name__ == '__main__':
     src_path = './misc/base_0.ply'
     tgt_path = './misc/base_1.ply'
@@ -95,12 +98,12 @@ if __name__ == '__main__':
     src_xyz, tgt_xyz, src_coords, tgt_coords, src_shape, tgt_shape = spconv_vox(src_pcd, tgt_pcd, voxel_size)
     src_features = torch.ones((len(src_coords), 1), dtype=torch.float32)
     tgt_features = torch.ones((len(tgt_coords), 1), dtype=torch.float32)
-    list_data = [(src_xyz, tgt_xyz, src_coords, tgt_coords, src_features, tgt_features, torch.ones(1,2),
+    list_data = [(src_xyz, tgt_xyz, src_coords, tgt_coords, src_features, tgt_features, torch.ones(1, 2),
                   np.eye(4), src_shape, tgt_shape, None, np.ones((6, 6)))]
 
     ## init model
     model = FCGF_spconv()
-    checkpoint = torch.load('ckpt_30.pth')
+    checkpoint = torch.load('checkpoint.pth')
     model.load_state_dict(checkpoint['state_dict'])
     model.eval()
     model = model.cuda()
@@ -148,5 +151,3 @@ if __name__ == '__main__':
     pred_trans = result_ransac.transformation
 
     visualize_registration(src_ply, tgt_ply, pred_trans)
-
-
