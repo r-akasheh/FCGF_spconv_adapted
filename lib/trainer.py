@@ -117,7 +117,7 @@ class Trainer(object):
         num_iter = self.val_loader.__len__()
         with torch.no_grad():
             for iter in tqdm(range(num_iter)):
-                inputs = val_loader_iter.next()
+                inputs = next(val_loader_iter)
 
                 for k, v in inputs.items():  # load inputs to device.
                     if type(v) == list:

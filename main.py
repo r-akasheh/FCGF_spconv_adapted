@@ -27,7 +27,7 @@ if __name__ == '__main__':
     parser.add_argument('--verbose_freq', type=float, default=100)
     ### Data Configuration
     parser.add_argument('--root-test', type=str, default='dataset/threedmatch/FCGF_data/threedmatch_test')
-    parser.add_argument('--root', type=str, default='dataset/threedmatch/FCGF_data/threedmatch')
+    parser.add_argument('--root', type=str, default='dataset/threedmatch/FCGF_data/npz_files')
     parser.add_argument('--voxel_size', type=float, default=0.025)
     parser.add_argument('--search_radius', type=float, default=0.0375)
     parser.add_argument('--rot_factor', type=int, default=4)

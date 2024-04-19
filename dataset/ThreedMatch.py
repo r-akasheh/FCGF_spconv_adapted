@@ -12,10 +12,11 @@ from lib.benchmark_util import load_log
 from spconv.pytorch.utils import PointToVoxel
 
 DATA_FILES = {
-      'train': './configs/train_3dmatch.txt',
-      'val': './configs/val_3dmatch.txt',
-      'test': './configs/test_3dmatch.txt'
-  }
+    'train': './configs/train_3dmatch.txt',
+    'val': './configs/val_3dmatch.txt',
+    'test': './configs/test_3dmatch.txt'
+}
+
 
 class ThreeDMatchDataset(Dataset):
     def __init__(self, config, split, data_augmentation=True):
@@ -30,31 +31,29 @@ class ThreeDMatchDataset(Dataset):
         self.trans_scale = config.trans_scale
         self.jitter_noise = config.jitter_noise
 
-        subset_names = open(DATA_FILES[split]).read().split()
         self.files = []
-        for name in subset_names:
-            fname = name + "@seq-01-%.2f.txt" % 0.30
-            fnames_txt = glob.glob(self.base_dir_test + "/" + fname)
-            assert len(fnames_txt) > 0, f"Make sure that the path {self.base_dir_test} has data {fname}"
-            for fname_txt in fnames_txt:
-                with open(fname_txt) as f:
-                    content = f.readlines()
-                fnames = [x.strip().split() for x in content]
-                for fname in fnames:
-                    self.files.append([fname[0], fname[1]])
+        with open("C:/master/robot-vision-modul/FCGF_spconv/dataset/pairs.txt") as f:
+            content = f.readlines()
+            f_names = [x.strip().split() for x in content]
+            for f_name in f_names:
+                self.files.append([f_name[0], f_name[1]])
+
+
+
+
 
     def __len__(self):
         return len(self.files)
 
     def __getitem__(self, item):
         # get pointcloud
-        src_path = os.path.join(self.base_dir, self.files[item][0])
-        tgt_path = os.path.join(self.base_dir, self.files[item][1])
+        src_path = os.path.join(self.base_dir, self.files[item][0] + ".npz")
+        tgt_path = os.path.join(self.base_dir, self.files[item][1] + ".npz")
         src_pcd = np.load(src_path)['pcd']
         tgt_pcd = np.load(tgt_path)['pcd']
 
         if self.data_augmentation:
-            euler_src = np.random.rand(3) * np.pi * 2 / self.rot_factor      # [0, pi/2]
+            euler_src = np.random.rand(3) * np.pi * 2 / self.rot_factor  # [0, pi/2]
             euler_tgt = np.random.rand(3) * np.pi * 2 / self.rot_factor
             trans_src = -self.trans_scale + np.random.rand(3) * (2 * self.trans_scale)
             trans_tgt = -self.trans_scale + np.random.rand(3) * (2 * self.trans_scale)
@@ -72,17 +71,19 @@ class ThreeDMatchDataset(Dataset):
             tsfm = np.eye(4)
 
         # build sparse tensor
-        src_xyzmin, src_xyzmax = np.floor(np.percentile(src_pcd, 0, axis=0)), np.ceil(np.percentile(src_pcd, 100, axis=0))
-        tgt_xyzmin, tgt_xyzmax = np.floor(np.percentile(tgt_pcd, 0, axis=0)), np.ceil(np.percentile(tgt_pcd, 100, axis=0))
+        src_xyzmin, src_xyzmax = np.floor(np.percentile(src_pcd, 0, axis=0)), np.ceil(
+            np.percentile(src_pcd, 100, axis=0))
+        tgt_xyzmin, tgt_xyzmax = np.floor(np.percentile(tgt_pcd, 0, axis=0)), np.ceil(
+            np.percentile(tgt_pcd, 100, axis=0))
         src_shape = (src_xyzmax - src_xyzmin) // self.voxel_size
         tgt_shape = (tgt_xyzmax - tgt_xyzmin) // self.voxel_size
 
         src_voxel_generator = PointToVoxel(vsize_xyz=[self.voxel_size] * 3,
-                                            coors_range_xyz=[src_xyzmin[0], src_xyzmin[1], src_xyzmin[2], src_xyzmax[0],
-                                                        src_xyzmax[1], src_xyzmax[2]],
-                                            num_point_features=3,
-                                            max_num_voxels=500000,
-                                            max_num_points_per_voxel=1)
+                                           coors_range_xyz=[src_xyzmin[0], src_xyzmin[1], src_xyzmin[2], src_xyzmax[0],
+                                                            src_xyzmax[1], src_xyzmax[2]],
+                                           num_point_features=3,
+                                           max_num_voxels=500000,
+                                           max_num_points_per_voxel=1)
         tgt_voxel_generator = PointToVoxel(vsize_xyz=[self.voxel_size] * 3,
                                            coors_range_xyz=[tgt_xyzmin[0], tgt_xyzmin[1], tgt_xyzmin[2], tgt_xyzmax[0],
                                                             tgt_xyzmax[1], tgt_xyzmax[2]],
@@ -100,12 +101,14 @@ class ThreeDMatchDataset(Dataset):
         tgt_features = torch.ones((len(tgt_voxels_coords), 1), dtype=torch.float32)
 
         #### get correspondence ###
-        matching_inds = get_correspondences(to_o3d_pcd(src_voxels_pts), to_o3d_pcd(tgt_voxels_pts), tsfm, self.search_voxel_size)
+        matching_inds = get_correspondences(to_o3d_pcd(src_voxels_pts), to_o3d_pcd(tgt_voxels_pts), tsfm,
+                                            self.search_voxel_size)
 
         src_xyz, tgt_xyz = to_tensor(src_voxels_pts).float(), to_tensor(tgt_voxels_pts).float()
 
         return src_xyz, tgt_xyz, src_voxels_coords, tgt_voxels_coords, src_features, tgt_features, \
-               matching_inds, tsfm, src_shape, tgt_shape, None, np.ones((6, 6))
+            matching_inds, tsfm, src_shape, tgt_shape, None, np.ones((6, 6))
+
 
 class ThreeDMatchTestset(Dataset):
     def __init__(self, config, split, data_augmentation):
@@ -134,7 +137,7 @@ class ThreeDMatchTestset(Dataset):
                 'sun3d-hotel_umd-maryland_hotel3',
                 'sun3d-mit_76_studyroom-76-1studyroom2',
                 'sun3d-mit_lab_hj-lab_hj_tea_nov_2_2012_scan1_erika'
-            ]
+                ]
 
     def generate_test_info(self):
         self.data_list = []
@@ -171,8 +174,10 @@ class ThreeDMatchTestset(Dataset):
         info = self.gt_infos[scene][f'{int(id1)}@{int(id2)}']
 
         # build sparse tensor
-        src_xyzmin, src_xyzmax = np.floor(np.percentile(src_pcd, 0, axis=0)), np.ceil(np.percentile(src_pcd, 100, axis=0))
-        tgt_xyzmin, tgt_xyzmax = np.floor(np.percentile(tgt_pcd, 0, axis=0)), np.ceil(np.percentile(tgt_pcd, 100, axis=0))
+        src_xyzmin, src_xyzmax = np.floor(np.percentile(src_pcd, 0, axis=0)), np.ceil(
+            np.percentile(src_pcd, 100, axis=0))
+        tgt_xyzmin, tgt_xyzmax = np.floor(np.percentile(tgt_pcd, 0, axis=0)), np.ceil(
+            np.percentile(tgt_pcd, 100, axis=0))
 
         src_shape = (src_xyzmax - src_xyzmin) // self.voxel_size
         tgt_shape = (tgt_xyzmax - tgt_xyzmin) // self.voxel_size
@@ -206,13 +211,15 @@ class ThreeDMatchTestset(Dataset):
         src_xyz, tgt_xyz = to_tensor(src_voxels_pts).float(), to_tensor(tgt_voxels_pts).float()
 
         return src_xyz, tgt_xyz, src_voxels_coords, tgt_voxels_coords, src_features, tgt_features, \
-               torch.ones(1,2), np.linalg.inv(tsfm), src_shape, tgt_shape, self.data_list[item], info
+            torch.ones(1, 2), np.linalg.inv(tsfm), src_shape, tgt_shape, self.data_list[item], info
 
     def __len__(self):
         return sum([v for _, v in self.scene_frags.items()])
 
+
 import argparse
 import pdb
+
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
@@ -221,6 +228,7 @@ if __name__ == '__main__':
     parser.add_argument('--voxel_size', type=float, default=0.025)
     parser.add_argument('--search_radius', type=float, default=0.0375)
     parser.add_argument('--augment_noise', type=float, default=0.005)
+    parser.add_argument('--rot_factor', type=float, default=4)
     parser.add_argument('--vox_bnds', type=list, default=[-3.6, -2.4, 1.14])
     args = parser.parse_args()
     dataset = ThreeDMatchDataset(config=args, split='val')

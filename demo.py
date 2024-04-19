@@ -81,21 +81,36 @@ def visualize_registration(src_ply, tgt_ply, pred_trans):
 
 
 if __name__ == '__main__':
-    src_path = './misc/base_0.ply'
-    tgt_path = './misc/base_1.ply'
-    voxel_size = 1.0
+    #src_path = './misc/base_0.ply'
+    #tgt_path = './misc/base_1.ply'
+    voxel_size = 0.025
 
     # src_path = './misc/gazebo_summer_0.ply'
     # tgt_path = './misc/gazebo_summer_1.ply'
     # voxel_size = 0.1
-    n_sample = 5000
+    n_sample = 20000
 
-    src_ply = o3d.io.read_point_cloud(src_path)
-    tgt_ply = o3d.io.read_point_cloud(tgt_path)
-    src_pcd = np.asarray(src_ply.points).astype(np.float32)
-    tgt_pcd = np.asarray(tgt_ply.points).astype(np.float32)
+    #src_ply = o3d.io.read_point_cloud(src_path)
+    #tgt_ply = o3d.io.read_point_cloud(tgt_path)
+    #src_pcd = np.asarray(src_ply.points).astype(np.float32)
+    #tgt_pcd = np.asarray(tgt_ply.points).astype(np.float32)
 
-    src_xyz, tgt_xyz, src_coords, tgt_coords, src_shape, tgt_shape = spconv_vox(src_pcd, tgt_pcd, voxel_size)
+    path_to_npz_src = "C:/master/robot-vision-modul/category-level-alignment-3d-geofeatures/mesh_transform/npz_files/shoe-white_black_buckles002.npz"
+    path_to_npz_trg = "C:/master/robot-vision-modul/category-level-alignment-3d-geofeatures/mesh_transform/npz_files/shoe-hummel_green_sandal_right001.npz"
+
+    # Load the point cloud data from the npz file
+    data_src = np.load(path_to_npz_src)
+    points_src = data_src['pcd']
+    points_src = np.asarray(points_src).astype(np.float32)
+    point_cloud_src = o3d.geometry.PointCloud()
+    point_cloud_src.points = o3d.utility.Vector3dVector(points_src)
+    data_trg = np.load(path_to_npz_trg)
+    points_trg = data_trg['pcd']
+    points_trg = np.asarray(points_trg).astype(np.float32)
+    point_cloud_trg = o3d.geometry.PointCloud()
+    point_cloud_trg.points = o3d.utility.Vector3dVector(points_trg)
+
+    src_xyz, tgt_xyz, src_coords, tgt_coords, src_shape, tgt_shape = spconv_vox(points_src, points_trg, voxel_size)
     src_features = torch.ones((len(src_coords), 1), dtype=torch.float32)
     tgt_features = torch.ones((len(tgt_coords), 1), dtype=torch.float32)
     list_data = [(src_xyz, tgt_xyz, src_coords, tgt_coords, src_features, tgt_features, torch.ones(1, 2),
@@ -103,7 +118,7 @@ if __name__ == '__main__':
 
     ## init model
     model = FCGF_spconv()
-    checkpoint = torch.load('checkpoint.pth')
+    checkpoint = torch.load('snapshot/04181514/checkpoints/checkpoint.pth')
     model.load_state_dict(checkpoint['state_dict'])
     model.eval()
     model = model.cuda()
@@ -150,4 +165,5 @@ if __name__ == '__main__':
         o3d.registration.RANSACConvergenceCriteria(50000, 1000))
     pred_trans = result_ransac.transformation
 
-    visualize_registration(src_ply, tgt_ply, pred_trans)
+
+    visualize_registration(point_cloud_src,point_cloud_trg, pred_trans)
