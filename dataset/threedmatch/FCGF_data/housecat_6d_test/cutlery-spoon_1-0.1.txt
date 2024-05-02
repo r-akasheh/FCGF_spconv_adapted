@@ -1,0 +1,1 @@
+cutlery-spoon_1006.npz cutlery-spoon_1002.npz 0.116

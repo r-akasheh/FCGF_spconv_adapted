@@ -1,0 +1,1 @@
+teapot-white_royal_norfolk.npz teapot-white_royal_norfolk000.npz 0.133

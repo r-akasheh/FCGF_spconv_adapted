@@ -1,0 +1,1 @@
+shoe-magenta_holes_right.npz shoe-magenta_holes_right000.npz 0.029

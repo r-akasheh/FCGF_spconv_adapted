@@ -11,10 +11,22 @@ from lib.utils import read_ply, to_tsfm, to_o3d_pcd, to_tensor, get_corresponden
 from lib.benchmark_util import load_log
 from spconv.pytorch.utils import PointToVoxel
 
-DATA_FILES = {
-    'train': './configs/train_3dmatch.txt',
-    'val': './configs/val_3dmatch.txt',
-    'test': './configs/test_3dmatch.txt'
+DATA_FILES_HOUSECAT = {
+    'shoe': {
+        'train': './configs/housecat_shoe/train_housecat_shoe.txt',
+        'val': './configs/housecat_shoe/val_housecat_shoe.txt',
+        'test': './configs/housecat_shoe/test_housecat_shoe.txt'
+    },
+    'cutlery': {
+        'train': './configs/housecat_cutlery/train_housecat_cutlery.txt',
+        'val': './configs/housecat_cutlery/val_housecat_cutlery.txt',
+        'test': './configs/housecat_cutlery/test_housecat_cutlery.txt'
+    },
+    'teapot': {
+        'train': './configs/housecat_teapot/train_housecat_teapot.txt',
+        'val': './configs/housecat_teapot/val_housecat_teapot.txt',
+        'test': './configs/housecat_teapot/test_housecat_teapot.txt'
+    }
 }
 
 
@@ -23,6 +35,7 @@ class ThreeDMatchDataset(Dataset):
         super(ThreeDMatchDataset, self).__init__()
         self.base_dir = config.root
         self.base_dir_test = config.root_test
+        self.item_type = config.item_type
         self.data_augmentation = data_augmentation
         self.config = config
         self.voxel_size = config.voxel_size
@@ -31,6 +44,21 @@ class ThreeDMatchDataset(Dataset):
         self.trans_scale = config.trans_scale
         self.jitter_noise = config.jitter_noise
 
+        # ORIGINAL TO ADAPT
+        subset_names = open(DATA_FILES_HOUSECAT[self.item_type][split]).read().split()
+        self.files = []
+        for name in subset_names:
+            fname = name + ".txt"# + "-%.2f.txt" % 0.05
+            fnames_txt = glob.glob(self.base_dir_test + "/" + fname)
+            assert len(fnames_txt) > 0, f"Make sure that the path {self.base_dir_test} has data {fname}"
+            for fname_txt in fnames_txt:
+                with open(fname_txt) as f:
+                    content = f.readlines()
+                fnames = [x.strip().split() for x in content]
+                for fname in fnames:
+                    self.files.append([fname[0], fname[1]])
+
+        # LAST WORKING VERSION WITHOUT SPLITS
         self.files = []
         with open("C:/master/robot-vision-modul/FCGF_spconv/dataset/pairs.txt") as f:
             content = f.readlines()
@@ -38,9 +66,7 @@ class ThreeDMatchDataset(Dataset):
             for f_name in f_names:
                 self.files.append([f_name[0], f_name[1]])
 
-
-
-
+        # END
 
     def __len__(self):
         return len(self.files)

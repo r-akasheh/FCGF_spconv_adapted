@@ -1,0 +1,1 @@
+teapot-white_malacasa.npz teapot-white_malacasa000.npz 0.120

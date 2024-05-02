@@ -1,0 +1,1 @@
+shoe-fashy_white_right.npz shoe-fashy_white_right000.npz 0.027

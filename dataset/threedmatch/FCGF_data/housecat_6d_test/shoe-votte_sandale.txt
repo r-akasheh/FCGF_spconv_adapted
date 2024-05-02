@@ -1,0 +1,1 @@
+shoe-votte_sandale.npz shoe-votte_sandale000.npz 0.031

@@ -95,8 +95,8 @@ if __name__ == '__main__':
     # src_pcd = np.asarray(src_ply.points).astype(np.float32)
     # tgt_pcd = np.asarray(tgt_ply.points).astype(np.float32)
 
-    path_to_npz_src = "C:/master/robot-vision-modul/category-level-alignment-3d-geofeatures/mesh_transform/npz_files/teapot-wooden_color003.npz"
-    path_to_npz_trg = "C:/master/robot-vision-modul/category-level-alignment-3d-geofeatures/mesh_transform/npz_files/teapot-wooden_color.npz"
+    path_to_npz_src = "C:/master/robot-vision-modul/category-level-alignment-3d-geofeatures/mesh_transform/housecat_6d_test/teapot-wooden_color003.npz"
+    path_to_npz_trg = "C:/master/robot-vision-modul/category-level-alignment-3d-geofeatures/mesh_transform/housecat_6d_test/teapot-wooden_color.npz"
 
     # Load the point cloud data from the npz file
     data_src = np.load(path_to_npz_src)

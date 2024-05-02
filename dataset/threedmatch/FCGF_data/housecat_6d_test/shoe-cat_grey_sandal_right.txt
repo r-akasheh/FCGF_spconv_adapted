@@ -1,0 +1,1 @@
+shoe-cat_grey_sandal_right.npz shoe-cat_grey_sandal_right000.npz 0.025

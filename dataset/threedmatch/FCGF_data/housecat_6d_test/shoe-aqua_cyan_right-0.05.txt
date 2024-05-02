@@ -1,0 +1,1 @@
+shoe-aqua_cyan_right006.npz shoe-aqua_cyan_right002.npz 0.059

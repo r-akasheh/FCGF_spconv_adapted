@@ -1,0 +1,1 @@
+shoe-skyblue_leda_right006.npz shoe-skyblue_leda_right002.npz 0.065

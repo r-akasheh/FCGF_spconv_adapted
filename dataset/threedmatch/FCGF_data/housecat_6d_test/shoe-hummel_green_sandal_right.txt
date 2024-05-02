@@ -1,0 +1,1 @@
+shoe-hummel_green_sandal_right.npz shoe-hummel_green_sandal_right000.npz 0.028

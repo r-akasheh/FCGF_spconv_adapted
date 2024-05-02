@@ -1,0 +1,1 @@
+teapot-white_black_line001.npz teapot-white_black_line007.npz 0.051

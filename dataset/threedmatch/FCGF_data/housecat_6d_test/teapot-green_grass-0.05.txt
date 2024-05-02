@@ -1,0 +1,1 @@
+teapot-green_grass001.npz teapot-green_grass007.npz 0.061

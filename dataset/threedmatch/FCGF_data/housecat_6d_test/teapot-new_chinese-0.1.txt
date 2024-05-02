@@ -1,0 +1,1 @@
+teapot-new_chinese006.npz teapot-new_chinese002.npz 0.109

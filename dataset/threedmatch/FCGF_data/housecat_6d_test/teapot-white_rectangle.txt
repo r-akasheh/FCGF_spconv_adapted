@@ -1,0 +1,1 @@
+teapot-white_rectangle.npz teapot-white_rectangle000.npz 0.118

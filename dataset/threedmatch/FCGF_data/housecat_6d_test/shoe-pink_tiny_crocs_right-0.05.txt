@@ -1,0 +1,1 @@
+shoe-pink_tiny_crocs_right006.npz shoe-pink_tiny_crocs_right002.npz 0.084

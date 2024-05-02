@@ -1,0 +1,1 @@
+teapot-white_was_brand001.npz teapot-white_was_brand007.npz 0.055

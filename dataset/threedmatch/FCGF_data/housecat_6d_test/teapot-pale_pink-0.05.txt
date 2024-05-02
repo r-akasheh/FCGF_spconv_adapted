@@ -1,0 +1,1 @@
+teapot-pale_pink.npz teapot-pale_pink000.npz 0.098

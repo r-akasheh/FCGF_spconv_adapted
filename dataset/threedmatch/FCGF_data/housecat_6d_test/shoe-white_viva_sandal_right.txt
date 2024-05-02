@@ -1,0 +1,1 @@
+shoe-white_viva_sandal_right.npz shoe-white_viva_sandal_right000.npz 0.028

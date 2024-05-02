@@ -1,7 +1,7 @@
 import os
 from itertools import combinations
 
-base_dir = "C:/master/robot-vision-modul/FCGF_spconv/dataset/threedmatch/FCGF_data/npz_files"
+base_dir = "/dataset/threedmatch/FCGF_data/housecat_6d"
 
 item_types = ["shoe", "teapot", "cutlery"]
 path = "C:/master/robot-vision-modul/obj_models/obj_models_small_size_final/"

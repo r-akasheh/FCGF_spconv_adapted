@@ -34,8 +34,8 @@ class Trainer(object):
         self.train_loader = config.train_loader
         self.val_loader = config.val_loader
 
-    def train(self):
-        print('start training...')
+    def train(self, item_type: str):
+        print('start training ' + item_type + ' model...')
         for epoch in range(self.start_epoch, self.max_epoch + 1):
             print(f"{'*'*30} Epoch {epoch} {'*'*30}")
             self.train_epoch(epoch)  # train

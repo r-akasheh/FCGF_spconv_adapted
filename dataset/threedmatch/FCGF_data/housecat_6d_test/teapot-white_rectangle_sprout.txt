@@ -1,0 +1,1 @@
+teapot-white_rectangle_sprout.npz teapot-white_rectangle_sprout000.npz 0.123

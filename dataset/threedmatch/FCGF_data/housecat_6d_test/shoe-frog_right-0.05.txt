@@ -1,0 +1,1 @@
+shoe-frog_right006.npz shoe-frog_right002.npz 0.089

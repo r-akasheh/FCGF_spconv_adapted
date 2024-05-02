@@ -1,0 +1,1 @@
+teapot-new_chinese.npz teapot-new_chinese000.npz 0.097

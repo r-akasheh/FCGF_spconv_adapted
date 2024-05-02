@@ -1,0 +1,1 @@
+teapot-white_blue_cone_top.npz teapot-white_blue_cone_top000.npz 0.095

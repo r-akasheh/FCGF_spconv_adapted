@@ -26,8 +26,9 @@ if __name__ == '__main__':
     parser.add_argument('--num_workers', type=int, default=0)
     parser.add_argument('--verbose_freq', type=float, default=100)
     ### Data Configuration
-    parser.add_argument('--root-test', type=str, default='dataset/threedmatch/FCGF_data/threedmatch_test')
-    parser.add_argument('--root', type=str, default='dataset/threedmatch/FCGF_data/npz_files')
+    parser.add_argument('--root-test', type=str, default='dataset/threedmatch/FCGF_data/housecat_6d_test')
+    parser.add_argument('--root', type=str, default='dataset/threedmatch/FCGF_data/housecat_6d')
+    parser.add_argument('--item_type', type=str, default='shoe')
     parser.add_argument('--voxel_size', type=float, default=0.025)
     parser.add_argument('--search_radius', type=float, default=0.0375)
     parser.add_argument('--rot_factor', type=int, default=4)
@@ -48,8 +49,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     dconfig = vars(args)
     config = edict(dconfig)
-
-    config.snapshot_dir = f'./snapshot/{experiment_id}'
+    config.snapshot_dir = f'./snapshot/{experiment_id}/{config.item_type}'
     config.ckpt_dir = os.path.join(config.snapshot_dir, 'checkpoints')
     config.tboard_dir = os.path.join(config.snapshot_dir, 'tensorboard')
     os.makedirs(config.snapshot_dir, exist_ok=False)
@@ -102,7 +102,7 @@ if __name__ == '__main__':
     trainer = Trainer(config)
 
     if (config.phase == 'train'):
-        trainer.train()
+        trainer.train(config.item_type)
     elif (config.phase == 'val'):
         trainer.eval(epoch=-1)
     else:

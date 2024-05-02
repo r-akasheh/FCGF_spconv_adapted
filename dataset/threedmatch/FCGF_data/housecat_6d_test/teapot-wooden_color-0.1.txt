@@ -1,0 +1,1 @@
+teapot-wooden_color.npz teapot-wooden_color000.npz 0.103

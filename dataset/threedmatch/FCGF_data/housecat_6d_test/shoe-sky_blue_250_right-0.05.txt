@@ -1,0 +1,1 @@
+shoe-sky_blue_250_right008.npz shoe-sky_blue_250_right003.npz 0.051

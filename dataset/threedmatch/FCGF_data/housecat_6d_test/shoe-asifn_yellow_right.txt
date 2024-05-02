@@ -1,0 +1,1 @@
+shoe-asifn_yellow_right.npz shoe-asifn_yellow_right000.npz 0.031

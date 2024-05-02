@@ -1,0 +1,1 @@
+shoe-crocs_pink_sandal_right006.npz shoe-crocs_pink_sandal_right002.npz 0.074

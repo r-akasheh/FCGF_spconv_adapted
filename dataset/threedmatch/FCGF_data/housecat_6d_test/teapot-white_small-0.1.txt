@@ -1,0 +1,1 @@
+teapot-white_small006.npz teapot-white_small002.npz 0.107

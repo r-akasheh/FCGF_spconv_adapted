@@ -1,0 +1,1 @@
+cutlery-spoon_6_new.npz cutlery-spoon_6_new000.npz 0.003

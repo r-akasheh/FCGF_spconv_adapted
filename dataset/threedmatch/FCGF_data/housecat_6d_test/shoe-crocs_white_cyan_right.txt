@@ -1,0 +1,1 @@
+shoe-crocs_white_cyan_right.npz shoe-crocs_white_cyan_right000.npz 0.027

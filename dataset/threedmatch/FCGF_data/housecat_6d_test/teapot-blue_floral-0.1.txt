@@ -1,0 +1,1 @@
+teapot-blue_floral004.npz teapot-blue_floral005.npz 0.109

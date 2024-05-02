@@ -1,0 +1,1 @@
+teapot-brown_small.npz teapot-brown_small000.npz 0.081

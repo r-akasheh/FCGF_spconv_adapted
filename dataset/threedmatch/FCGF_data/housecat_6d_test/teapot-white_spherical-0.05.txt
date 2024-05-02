@@ -1,0 +1,1 @@
+teapot-white_spherical008.npz teapot-white_spherical003.npz 0.091
