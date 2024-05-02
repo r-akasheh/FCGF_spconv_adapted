@@ -1,1 +1,3 @@
-teapot-new_chinese006.npz teapot-new_chinese002.npz 0.109
+teapot-new_chinese002.npz teapot-new_chinese006.npz 0.109
+teapot-new_chinese.npz teapot-new_chinese002.npz 0.109
+teapot-new_chinese000.npz teapot-new_chinese006.npz 0.101

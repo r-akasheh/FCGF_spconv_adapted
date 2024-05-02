@@ -1,1 +1,16 @@
-teapot-new_chinese.npz teapot-new_chinese000.npz 0.097
+teapot-new_chinese005.npz teapot-new_chinese007.npz 0.079
+teapot-new_chinese002.npz teapot-new_chinese006.npz 0.109
+teapot-new_chinese001.npz teapot-new_chinese006.npz 0.082
+teapot-new_chinese000.npz teapot-new_chinese002.npz 0.070
+teapot-new_chinese002.npz teapot-new_chinese008.npz 0.072
+teapot-new_chinese000.npz teapot-new_chinese004.npz 0.074
+teapot-new_chinese003.npz teapot-new_chinese007.npz 0.075
+teapot-new_chinese.npz teapot-new_chinese008.npz 0.098
+teapot-new_chinese002.npz teapot-new_chinese007.npz 0.083
+teapot-new_chinese001.npz teapot-new_chinese004.npz 0.086
+teapot-new_chinese.npz teapot-new_chinese002.npz 0.109
+teapot-new_chinese.npz teapot-new_chinese007.npz 0.097
+teapot-new_chinese.npz teapot-new_chinese004.npz 0.097
+teapot-new_chinese000.npz teapot-new_chinese006.npz 0.101
+teapot-new_chinese005.npz teapot-new_chinese008.npz 0.052
+teapot-new_chinese003.npz teapot-new_chinese006.npz 0.070

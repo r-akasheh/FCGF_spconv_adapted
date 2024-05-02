@@ -1,1 +1,16 @@
-teapot-brown_chinese.npz teapot-brown_chinese000.npz 0.091
+teapot-brown_chinese002.npz teapot-brown_chinese007.npz 0.090
+teapot-brown_chinese004.npz teapot-brown_chinese007.npz 0.052
+teapot-brown_chinese000.npz teapot-brown_chinese006.npz 0.100
+teapot-brown_chinese005.npz teapot-brown_chinese007.npz 0.075
+teapot-brown_chinese001.npz teapot-brown_chinese004.npz 0.093
+teapot-brown_chinese003.npz teapot-brown_chinese007.npz 0.069
+teapot-brown_chinese.npz teapot-brown_chinese002.npz 0.099
+teapot-brown_chinese000.npz teapot-brown_chinese002.npz 0.075
+teapot-brown_chinese002.npz teapot-brown_chinese008.npz 0.077
+teapot-brown_chinese.npz teapot-brown_chinese007.npz 0.096
+teapot-brown_chinese000.npz teapot-brown_chinese004.npz 0.080
+teapot-brown_chinese.npz teapot-brown_chinese004.npz 0.109
+teapot-brown_chinese002.npz teapot-brown_chinese006.npz 0.113
+teapot-brown_chinese.npz teapot-brown_chinese008.npz 0.091
+teapot-brown_chinese001.npz teapot-brown_chinese006.npz 0.080
+teapot-brown_chinese003.npz teapot-brown_chinese006.npz 0.084

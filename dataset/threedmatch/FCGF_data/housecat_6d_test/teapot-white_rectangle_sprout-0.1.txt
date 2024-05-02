@@ -1,1 +1,5 @@
-teapot-white_rectangle_sprout.npz teapot-white_rectangle_sprout000.npz 0.123
+teapot-white_rectangle_sprout000.npz teapot-white_rectangle_sprout006.npz 0.123
+teapot-white_rectangle_sprout.npz teapot-white_rectangle_sprout002.npz 0.137
+teapot-white_rectangle_sprout.npz teapot-white_rectangle_sprout004.npz 0.100
+teapot-white_rectangle_sprout002.npz teapot-white_rectangle_sprout007.npz 0.110
+teapot-white_rectangle_sprout002.npz teapot-white_rectangle_sprout006.npz 0.136

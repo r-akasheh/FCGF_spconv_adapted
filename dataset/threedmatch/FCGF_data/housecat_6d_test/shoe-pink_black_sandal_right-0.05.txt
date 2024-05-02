@@ -1,0 +1,1 @@
+shoe-pink_black_sandal_right003.npz shoe-pink_black_sandal_right006.npz 0.059

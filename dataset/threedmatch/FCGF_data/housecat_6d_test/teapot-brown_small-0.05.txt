@@ -1,1 +1,15 @@
-teapot-brown_small.npz teapot-brown_small000.npz 0.081
+teapot-brown_small001.npz teapot-brown_small006.npz 0.074
+teapot-brown_small.npz teapot-brown_small007.npz 0.087
+teapot-brown_small000.npz teapot-brown_small002.npz 0.090
+teapot-brown_small003.npz teapot-brown_small007.npz 0.069
+teapot-brown_small001.npz teapot-brown_small004.npz 0.071
+teapot-brown_small.npz teapot-brown_small002.npz 0.090
+teapot-brown_small002.npz teapot-brown_small008.npz 0.093
+teapot-brown_small000.npz teapot-brown_small006.npz 0.097
+teapot-brown_small005.npz teapot-brown_small007.npz 0.060
+teapot-brown_small003.npz teapot-brown_small006.npz 0.080
+teapot-brown_small.npz teapot-brown_small004.npz 0.091
+teapot-brown_small000.npz teapot-brown_small004.npz 0.059
+teapot-brown_small002.npz teapot-brown_small007.npz 0.106
+teapot-brown_small002.npz teapot-brown_small006.npz 0.119
+teapot-brown_small.npz teapot-brown_small008.npz 0.082

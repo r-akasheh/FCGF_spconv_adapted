@@ -1,1 +1,5 @@
-shoe-hummel_green_sandal_right006.npz shoe-hummel_green_sandal_right002.npz 0.096
+shoe-hummel_green_sandal_right001.npz shoe-hummel_green_sandal_right006.npz 0.074
+shoe-hummel_green_sandal_right003.npz shoe-hummel_green_sandal_right006.npz 0.064
+shoe-hummel_green_sandal_right002.npz shoe-hummel_green_sandal_right006.npz 0.096
+shoe-hummel_green_sandal_right002.npz shoe-hummel_green_sandal_right007.npz 0.050
+shoe-hummel_green_sandal_right000.npz shoe-hummel_green_sandal_right006.npz 0.070

@@ -1,1 +1,6 @@
-teapot-blue_floral004.npz teapot-blue_floral005.npz 0.109
+teapot-blue_floral002.npz teapot-blue_floral008.npz 0.130
+teapot-blue_floral000.npz teapot-blue_floral002.npz 0.128
+teapot-blue_floral002.npz teapot-blue_floral007.npz 0.134
+teapot-blue_floral.npz teapot-blue_floral002.npz 0.107
+teapot-blue_floral002.npz teapot-blue_floral006.npz 0.134
+teapot-blue_floral005.npz teapot-blue_floral007.npz 0.106

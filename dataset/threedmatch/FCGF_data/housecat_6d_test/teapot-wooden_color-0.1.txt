@@ -1,1 +1,6 @@
-teapot-wooden_color.npz teapot-wooden_color000.npz 0.103
+teapot-wooden_color000.npz teapot-wooden_color002.npz 0.100
+teapot-wooden_color000.npz teapot-wooden_color006.npz 0.113
+teapot-wooden_color002.npz teapot-wooden_color008.npz 0.101
+teapot-wooden_color002.npz teapot-wooden_color006.npz 0.129
+teapot-wooden_color.npz teapot-wooden_color002.npz 0.111
+teapot-wooden_color002.npz teapot-wooden_color007.npz 0.111

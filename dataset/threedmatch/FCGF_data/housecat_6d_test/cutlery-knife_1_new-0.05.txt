@@ -1,1 +1,4 @@
-cutlery-knife_1_new006.npz cutlery-knife_1_new002.npz 0.059
+cutlery-knife_1_new001.npz cutlery-knife_1_new006.npz 0.058
+cutlery-knife_1_new003.npz cutlery-knife_1_new006.npz 0.096
+cutlery-knife_1_new002.npz cutlery-knife_1_new006.npz 0.059
+cutlery-knife_1_new000.npz cutlery-knife_1_new006.npz 0.060

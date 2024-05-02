@@ -1,1 +1,10 @@
-teapot-green_grass.npz teapot-green_grass000.npz 0.108
+teapot-green_grass002.npz teapot-green_grass008.npz 0.123
+teapot-green_grass002.npz teapot-green_grass007.npz 0.121
+teapot-green_grass001.npz teapot-green_grass006.npz 0.107
+teapot-green_grass000.npz teapot-green_grass006.npz 0.124
+teapot-green_grass001.npz teapot-green_grass004.npz 0.107
+teapot-green_grass000.npz teapot-green_grass004.npz 0.112
+teapot-green_grass000.npz teapot-green_grass002.npz 0.120
+teapot-green_grass002.npz teapot-green_grass006.npz 0.132
+teapot-green_grass.npz teapot-green_grass008.npz 0.102
+teapot-green_grass.npz teapot-green_grass002.npz 0.115

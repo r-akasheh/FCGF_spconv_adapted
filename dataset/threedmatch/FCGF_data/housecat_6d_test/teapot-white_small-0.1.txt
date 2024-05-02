@@ -1,1 +1,2 @@
-teapot-white_small006.npz teapot-white_small002.npz 0.107
+teapot-white_small.npz teapot-white_small002.npz 0.111
+teapot-white_small002.npz teapot-white_small006.npz 0.107

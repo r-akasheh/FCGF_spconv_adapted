@@ -1,1 +1,4 @@
-shoe-crocs_yellow_sandal_right006.npz shoe-crocs_yellow_sandal_right002.npz 0.076
+shoe-crocs_yellow_sandal_right003.npz shoe-crocs_yellow_sandal_right006.npz 0.055
+shoe-crocs_yellow_sandal_right001.npz shoe-crocs_yellow_sandal_right006.npz 0.063
+shoe-crocs_yellow_sandal_right000.npz shoe-crocs_yellow_sandal_right006.npz 0.062
+shoe-crocs_yellow_sandal_right002.npz shoe-crocs_yellow_sandal_right006.npz 0.076

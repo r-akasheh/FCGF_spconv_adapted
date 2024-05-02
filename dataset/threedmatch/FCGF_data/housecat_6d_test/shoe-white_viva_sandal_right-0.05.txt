@@ -1,1 +1,4 @@
-shoe-white_viva_sandal_right006.npz shoe-white_viva_sandal_right002.npz 0.085
+shoe-white_viva_sandal_right002.npz shoe-white_viva_sandal_right006.npz 0.085
+shoe-white_viva_sandal_right003.npz shoe-white_viva_sandal_right006.npz 0.056
+shoe-white_viva_sandal_right000.npz shoe-white_viva_sandal_right006.npz 0.061
+shoe-white_viva_sandal_right001.npz shoe-white_viva_sandal_right006.npz 0.066

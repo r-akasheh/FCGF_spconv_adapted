@@ -1,0 +1,1 @@
+cutlery-knife_1003.npz cutlery-knife_1006.npz 0.176

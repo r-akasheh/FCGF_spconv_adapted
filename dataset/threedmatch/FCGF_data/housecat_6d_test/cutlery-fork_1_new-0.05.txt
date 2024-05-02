@@ -1,0 +1,4 @@
+cutlery-fork_1_new001.npz cutlery-fork_1_new006.npz 0.092
+cutlery-fork_1_new000.npz cutlery-fork_1_new006.npz 0.103
+cutlery-fork_1_new002.npz cutlery-fork_1_new006.npz 0.101
+cutlery-fork_1_new003.npz cutlery-fork_1_new006.npz 0.109

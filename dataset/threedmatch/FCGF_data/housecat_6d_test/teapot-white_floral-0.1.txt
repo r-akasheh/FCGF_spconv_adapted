@@ -1,1 +1,14 @@
-teapot-white_floral.npz teapot-white_floral000.npz 0.128
+teapot-white_floral.npz teapot-white_floral004.npz 0.141
+teapot-white_floral003.npz teapot-white_floral006.npz 0.126
+teapot-white_floral002.npz teapot-white_floral006.npz 0.174
+teapot-white_floral005.npz teapot-white_floral007.npz 0.144
+teapot-white_floral000.npz teapot-white_floral002.npz 0.141
+teapot-white_floral000.npz teapot-white_floral006.npz 0.137
+teapot-white_floral.npz teapot-white_floral008.npz 0.131
+teapot-white_floral001.npz teapot-white_floral004.npz 0.141
+teapot-white_floral.npz teapot-white_floral007.npz 0.124
+teapot-white_floral.npz teapot-white_floral002.npz 0.131
+teapot-white_floral002.npz teapot-white_floral008.npz 0.160
+teapot-white_floral000.npz teapot-white_floral005.npz 0.134
+teapot-white_floral002.npz teapot-white_floral007.npz 0.151
+teapot-white_floral005.npz teapot-white_floral008.npz 0.154

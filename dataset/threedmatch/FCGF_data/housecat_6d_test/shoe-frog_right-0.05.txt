@@ -1,1 +1,6 @@
-shoe-frog_right006.npz shoe-frog_right002.npz 0.089
+shoe-frog_right002.npz shoe-frog_right006.npz 0.089
+shoe-frog_right002.npz shoe-frog_right007.npz 0.065
+shoe-frog_right000.npz shoe-frog_right002.npz 0.065
+shoe-frog_right002.npz shoe-frog_right008.npz 0.063
+shoe-frog_right000.npz shoe-frog_right006.npz 0.052
+shoe-frog_right003.npz shoe-frog_right006.npz 0.053

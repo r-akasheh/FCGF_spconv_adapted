@@ -1,1 +1,4 @@
-shoe-sky_blue_holes_right006.npz shoe-sky_blue_holes_right002.npz 0.074
+shoe-sky_blue_holes_right002.npz shoe-sky_blue_holes_right006.npz 0.074
+shoe-sky_blue_holes_right001.npz shoe-sky_blue_holes_right006.npz 0.060
+shoe-sky_blue_holes_right000.npz shoe-sky_blue_holes_right006.npz 0.059
+shoe-sky_blue_holes_right003.npz shoe-sky_blue_holes_right006.npz 0.067

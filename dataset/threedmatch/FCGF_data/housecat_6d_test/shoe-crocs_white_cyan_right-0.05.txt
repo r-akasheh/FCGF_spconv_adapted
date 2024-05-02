@@ -1,1 +1,5 @@
-shoe-crocs_white_cyan_right008.npz shoe-crocs_white_cyan_right003.npz 0.053
+shoe-crocs_white_cyan_right001.npz shoe-crocs_white_cyan_right006.npz 0.084
+shoe-crocs_white_cyan_right003.npz shoe-crocs_white_cyan_right007.npz 0.054
+shoe-crocs_white_cyan_right002.npz shoe-crocs_white_cyan_right006.npz 0.090
+shoe-crocs_white_cyan_right000.npz shoe-crocs_white_cyan_right006.npz 0.077
+shoe-crocs_white_cyan_right003.npz shoe-crocs_white_cyan_right006.npz 0.077

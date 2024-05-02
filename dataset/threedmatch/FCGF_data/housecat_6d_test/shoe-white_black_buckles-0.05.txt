@@ -1,0 +1,1 @@
+shoe-white_black_buckles003.npz shoe-white_black_buckles006.npz 0.059

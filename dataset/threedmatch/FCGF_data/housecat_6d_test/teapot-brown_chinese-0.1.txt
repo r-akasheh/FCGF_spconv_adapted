@@ -1,1 +1,2 @@
-teapot-brown_chinese006.npz teapot-brown_chinese002.npz 0.113
+teapot-brown_chinese.npz teapot-brown_chinese004.npz 0.109
+teapot-brown_chinese002.npz teapot-brown_chinese006.npz 0.113

@@ -1,1 +1,6 @@
-teapot-white_blue_cone_top004.npz teapot-white_blue_cone_top005.npz 0.112
+teapot-white_blue_cone_top002.npz teapot-white_blue_cone_top006.npz 0.123
+teapot-white_blue_cone_top000.npz teapot-white_blue_cone_top002.npz 0.125
+teapot-white_blue_cone_top002.npz teapot-white_blue_cone_top008.npz 0.123
+teapot-white_blue_cone_top002.npz teapot-white_blue_cone_top007.npz 0.127
+teapot-white_blue_cone_top.npz teapot-white_blue_cone_top002.npz 0.110
+teapot-white_blue_cone_top005.npz teapot-white_blue_cone_top007.npz 0.113

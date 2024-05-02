@@ -1,1 +1,5 @@
-shoe-blue_75_right006.npz shoe-blue_75_right002.npz 0.070
+shoe-blue_75_right001.npz shoe-blue_75_right006.npz 0.054
+shoe-blue_75_right003.npz shoe-blue_75_right007.npz 0.051
+shoe-blue_75_right003.npz shoe-blue_75_right006.npz 0.052
+shoe-blue_75_right000.npz shoe-blue_75_right006.npz 0.051
+shoe-blue_75_right002.npz shoe-blue_75_right006.npz 0.070

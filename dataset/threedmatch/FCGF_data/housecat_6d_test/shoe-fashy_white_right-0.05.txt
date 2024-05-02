@@ -1,1 +1,4 @@
-shoe-fashy_white_right006.npz shoe-fashy_white_right002.npz 0.078
+shoe-fashy_white_right001.npz shoe-fashy_white_right006.npz 0.063
+shoe-fashy_white_right003.npz shoe-fashy_white_right006.npz 0.066
+shoe-fashy_white_right002.npz shoe-fashy_white_right006.npz 0.078
+shoe-fashy_white_right000.npz shoe-fashy_white_right006.npz 0.060

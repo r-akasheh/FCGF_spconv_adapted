@@ -1,1 +1,4 @@
-teapot-white_floral004.npz teapot-white_floral005.npz 0.151
+teapot-white_floral002.npz teapot-white_floral006.npz 0.174
+teapot-white_floral002.npz teapot-white_floral008.npz 0.160
+teapot-white_floral002.npz teapot-white_floral007.npz 0.151
+teapot-white_floral005.npz teapot-white_floral008.npz 0.154

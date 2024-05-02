@@ -1,1 +1,4 @@
-shoe-cat_grey_sandal_right006.npz shoe-cat_grey_sandal_right002.npz 0.083
+shoe-cat_grey_sandal_right002.npz shoe-cat_grey_sandal_right006.npz 0.083
+shoe-cat_grey_sandal_right003.npz shoe-cat_grey_sandal_right006.npz 0.053
+shoe-cat_grey_sandal_right001.npz shoe-cat_grey_sandal_right006.npz 0.071
+shoe-cat_grey_sandal_right000.npz shoe-cat_grey_sandal_right006.npz 0.070

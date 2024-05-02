@@ -1,1 +1,5 @@
-teapot-white_black_line.npz teapot-white_black_line000.npz 0.102
+teapot-white_black_line.npz teapot-white_black_line002.npz 0.109
+teapot-white_black_line002.npz teapot-white_black_line006.npz 0.129
+teapot-white_black_line000.npz teapot-white_black_line006.npz 0.111
+teapot-white_black_line002.npz teapot-white_black_line008.npz 0.101
+teapot-white_black_line002.npz teapot-white_black_line007.npz 0.112

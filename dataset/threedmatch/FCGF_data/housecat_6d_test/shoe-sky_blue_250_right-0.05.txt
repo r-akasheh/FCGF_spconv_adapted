@@ -1,1 +1,2 @@
-shoe-sky_blue_250_right008.npz shoe-sky_blue_250_right003.npz 0.051
+shoe-sky_blue_250_right003.npz shoe-sky_blue_250_right006.npz 0.067
+shoe-sky_blue_250_right003.npz shoe-sky_blue_250_right007.npz 0.052

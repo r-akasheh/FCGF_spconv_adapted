@@ -1,1 +1,6 @@
-cutlery-spoon_2_new006.npz cutlery-spoon_2_new002.npz 0.095
+cutlery-spoon_2_new003.npz cutlery-spoon_2_new006.npz 0.096
+cutlery-spoon_2_new001.npz cutlery-spoon_2_new004.npz 0.059
+cutlery-spoon_2_new000.npz cutlery-spoon_2_new006.npz 0.091
+cutlery-spoon_2_new001.npz cutlery-spoon_2_new006.npz 0.103
+cutlery-spoon_2_new002.npz cutlery-spoon_2_new006.npz 0.095
+cutlery-spoon_2_new004.npz cutlery-spoon_2_new007.npz 0.052

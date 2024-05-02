@@ -1,1 +1,3 @@
-shoe-asifn_yellow_right006.npz shoe-asifn_yellow_right002.npz 0.069
+shoe-asifn_yellow_right002.npz shoe-asifn_yellow_right006.npz 0.069
+shoe-asifn_yellow_right001.npz shoe-asifn_yellow_right006.npz 0.053
+shoe-asifn_yellow_right003.npz shoe-asifn_yellow_right006.npz 0.066

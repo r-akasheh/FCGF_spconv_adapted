@@ -1,1 +1,5 @@
-shoe-pink_tiny_crocs_right006.npz shoe-pink_tiny_crocs_right002.npz 0.084
+shoe-pink_tiny_crocs_right002.npz shoe-pink_tiny_crocs_right008.npz 0.058
+shoe-pink_tiny_crocs_right002.npz shoe-pink_tiny_crocs_right006.npz 0.084
+shoe-pink_tiny_crocs_right002.npz shoe-pink_tiny_crocs_right007.npz 0.064
+shoe-pink_tiny_crocs_right003.npz shoe-pink_tiny_crocs_right006.npz 0.060
+shoe-pink_tiny_crocs_right000.npz shoe-pink_tiny_crocs_right002.npz 0.059

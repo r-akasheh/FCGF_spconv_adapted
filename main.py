@@ -52,22 +52,23 @@ if __name__ == '__main__':
     config.snapshot_dir = f'./snapshot/{experiment_id}/{config.item_type}'
     config.ckpt_dir = os.path.join(config.snapshot_dir, 'checkpoints')
     config.tboard_dir = os.path.join(config.snapshot_dir, 'tensorboard')
-    os.makedirs(config.snapshot_dir, exist_ok=False)
-    os.makedirs(config.ckpt_dir, exist_ok=False)
-    os.makedirs(config.tboard_dir, exist_ok=False)
-    json.dump(
-        config,
-        open(os.path.join(config.snapshot_dir, 'config.json'), 'w'),
-        indent=4,
-    )
-    shutil.copy2('main.py', config.snapshot_dir)
-    shutil.copy2('./dataset/ThreedMatch.py', config.snapshot_dir)
-    shutil.copy2('./model/resunet_spconv.py', os.path.join(config.snapshot_dir, 'model.py'))
+    #os.makedirs(config.snapshot_dir, exist_ok=False)
+    #os.makedirs(config.ckpt_dir, exist_ok=False)
+    #os.makedirs(config.tboard_dir, exist_ok=False)
+    #json.dump(
+    #    config,
+    #    open(os.path.join(config.snapshot_dir, 'config.json'), 'w'),
+    #    indent=4,
+    #)
+    #shutil.copy2('main.py', config.snapshot_dir)
+    #shutil.copy2('./dataset/ThreedMatch.py', config.snapshot_dir)
+    #shutil.copy2('./model/resunet_spconv.py', os.path.join(config.snapshot_dir, 'model.py'))
 
     ### Create Model ###
     config.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
     config.model = FCGF_spconv()
-    # print(config.model)
+
 
     ### Create Optimizer ###
     if config.optimizer == 'SGD':
@@ -94,9 +95,12 @@ if __name__ == '__main__':
     ### Create Dataloader ###
     config.train_loader = get_dataloader(config, split='train')
     config.val_loader = get_dataloader(config, split='val')
+    print(config.val_loader)
 
     ### Create Loss ###
     config.desc_loss = HardestContrastiveLoss(config)
+
+    config.phase = "val"
 
     ### Create Trainer ###
     trainer = Trainer(config)
@@ -104,7 +108,11 @@ if __name__ == '__main__':
     if (config.phase == 'train'):
         trainer.train(config.item_type)
     elif (config.phase == 'val'):
-        trainer.eval(epoch=-1)
+        checkpoint = torch.load('snapshot/05020923/shoe/checkpoints/checkpoint.pth')
+        config.model.load_state_dict(checkpoint['state_dict'])
+        config.model.eval()
+        config.model = config.model.cuda()
+        trainer.eval(epoch=10)
     else:
         raise NotImplementedError
 

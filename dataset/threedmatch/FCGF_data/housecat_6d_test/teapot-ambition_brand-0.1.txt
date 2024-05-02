@@ -1,0 +1,13 @@
+teapot-ambition_brand000.npz teapot-ambition_brand002.npz 0.209
+teapot-ambition_brand005.npz teapot-ambition_brand007.npz 0.167
+teapot-ambition_brand.npz teapot-ambition_brand008.npz 0.148
+teapot-ambition_brand002.npz teapot-ambition_brand006.npz 0.186
+teapot-ambition_brand.npz teapot-ambition_brand002.npz 0.156
+teapot-ambition_brand001.npz teapot-ambition_brand004.npz 0.116
+teapot-ambition_brand002.npz teapot-ambition_brand008.npz 0.216
+teapot-ambition_brand002.npz teapot-ambition_brand007.npz 0.169
+teapot-ambition_brand003.npz teapot-ambition_brand006.npz 0.115
+teapot-ambition_brand000.npz teapot-ambition_brand006.npz 0.193
+teapot-ambition_brand000.npz teapot-ambition_brand004.npz 0.173
+teapot-ambition_brand000.npz teapot-ambition_brand007.npz 0.173
+teapot-ambition_brand.npz teapot-ambition_brand004.npz 0.121
