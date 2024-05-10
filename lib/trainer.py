@@ -47,7 +47,7 @@ class Trainer(object):
                 self.best_loss = res['loss']
                 self._snapshot(epoch, name='best_loss')
             if res['recall'] > self.best_recall:
-                self.best_acc = res['recall']
+                self.best_recall = res['recall']
                 self._snapshot(epoch, name='best_recall')
 
         # finish all epoch

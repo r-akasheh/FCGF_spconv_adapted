@@ -1,10 +1,12 @@
 import os
 from itertools import combinations
 
-base_dir = "/dataset/threedmatch/FCGF_data/housecat_6d"
+from configs.general_config import base_path
+
+base_dir = "/dataset/housecat_6d/FCGF_data/housecat_6d"
 
 item_types = ["shoe", "teapot", "cutlery"]
-path = "C:/master/robot-vision-modul/obj_models/obj_models_small_size_final/"
+path = base_path + "obj_models/obj_models_small_size_final/"
 names = {}
 pairs = []
 for item in item_types:

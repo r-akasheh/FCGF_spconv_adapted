@@ -44,11 +44,10 @@ class ThreeDMatchDataset(Dataset):
         self.trans_scale = config.trans_scale
         self.jitter_noise = config.jitter_noise
 
-        # ORIGINAL TO ADAPT
         subset_names = open(DATA_FILES_HOUSECAT[self.item_type][split]).read().split()
         self.files = []
         for name in subset_names:
-            fname = name + ".txt"# + "-%.2f.txt" % 0.05
+            fname = name + ".txt"  # + "-%.2f.txt" % 0.05
             fnames_txt = glob.glob(self.base_dir_test + "/" + fname)
             assert len(fnames_txt) > 0, f"Make sure that the path {self.base_dir_test} has data {fname}"
             for fname_txt in fnames_txt:
@@ -58,23 +57,14 @@ class ThreeDMatchDataset(Dataset):
                 for fname in fnames:
                     self.files.append([fname[0], fname[1]])
 
-        # LAST WORKING VERSION WITHOUT SPLITS
-        self.files = []
-        with open("C:/master/robot-vision-modul/FCGF_spconv/dataset/pairs.txt") as f:
-            content = f.readlines()
-            f_names = [x.strip().split() for x in content]
-            for f_name in f_names:
-                self.files.append([f_name[0], f_name[1]])
-
-        # END
 
     def __len__(self):
         return len(self.files)
 
     def __getitem__(self, item):
         # get pointcloud
-        src_path = os.path.join(self.base_dir, self.files[item][0] + ".npz")
-        tgt_path = os.path.join(self.base_dir, self.files[item][1] + ".npz")
+        src_path = os.path.join(self.base_dir, self.files[item][0])
+        tgt_path = os.path.join(self.base_dir, self.files[item][1])
         src_pcd = np.load(src_path)['pcd']
         tgt_pcd = np.load(tgt_path)['pcd']
 

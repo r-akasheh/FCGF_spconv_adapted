@@ -95,8 +95,10 @@ if __name__ == '__main__':
     # src_pcd = np.asarray(src_ply.points).astype(np.float32)
     # tgt_pcd = np.asarray(tgt_ply.points).astype(np.float32)
 
-    path_to_npz_src = "C:/master/robot-vision-modul/category-level-alignment-3d-geofeatures/mesh_transform/housecat_6d_test/teapot-wooden_color003.npz"
-    path_to_npz_trg = "C:/master/robot-vision-modul/category-level-alignment-3d-geofeatures/mesh_transform/housecat_6d_test/teapot-wooden_color.npz"
+    item_type = "shoe"
+    path_to_npz_src = "/dataset/housecat_6d/FCGF_data/housecat_6d/teapot-wooden_color007.npz"
+    path_to_npz_trg = "/dataset/housecat_6d/FCGF_data/housecat_6d/teapot-wooden_color.npz"
+
 
     # Load the point cloud data from the npz file
     data_src = np.load(path_to_npz_src)
@@ -118,7 +120,7 @@ if __name__ == '__main__':
 
     ## init model
     model = FCGF_spconv()
-    checkpoint = torch.load('snapshot/04181514/checkpoints/checkpoint.pth')
+    checkpoint = torch.load('snapshot/final_models/' + item_type + '/checkpoints/checkpoint.pth')
     model.load_state_dict(checkpoint['state_dict'])
     model.eval()
     model = model.cuda()

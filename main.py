@@ -26,8 +26,8 @@ if __name__ == '__main__':
     parser.add_argument('--num_workers', type=int, default=0)
     parser.add_argument('--verbose_freq', type=float, default=100)
     ### Data Configuration
-    parser.add_argument('--root-test', type=str, default='dataset/threedmatch/FCGF_data/housecat_6d_test')
-    parser.add_argument('--root', type=str, default='dataset/threedmatch/FCGF_data/housecat_6d')
+    parser.add_argument('--root-test', type=str, default='dataset/housecat_6d/FCGF_data/housecat_6d_test')
+    parser.add_argument('--root', type=str, default='dataset/housecat_6d/FCGF_data/housecat_6d')
     parser.add_argument('--item_type', type=str, default='shoe')
     parser.add_argument('--voxel_size', type=float, default=0.025)
     parser.add_argument('--search_radius', type=float, default=0.0375)
@@ -49,20 +49,21 @@ if __name__ == '__main__':
     args = parser.parse_args()
     dconfig = vars(args)
     config = edict(dconfig)
+    #config.item_type = "teapot"
     config.snapshot_dir = f'./snapshot/{experiment_id}/{config.item_type}'
     config.ckpt_dir = os.path.join(config.snapshot_dir, 'checkpoints')
     config.tboard_dir = os.path.join(config.snapshot_dir, 'tensorboard')
-    #os.makedirs(config.snapshot_dir, exist_ok=False)
-    #os.makedirs(config.ckpt_dir, exist_ok=False)
-    #os.makedirs(config.tboard_dir, exist_ok=False)
-    #json.dump(
-    #    config,
-    #    open(os.path.join(config.snapshot_dir, 'config.json'), 'w'),
-    #    indent=4,
-    #)
-    #shutil.copy2('main.py', config.snapshot_dir)
-    #shutil.copy2('./dataset/ThreedMatch.py', config.snapshot_dir)
-    #shutil.copy2('./model/resunet_spconv.py', os.path.join(config.snapshot_dir, 'model.py'))
+    os.makedirs(config.snapshot_dir, exist_ok=False)
+    os.makedirs(config.ckpt_dir, exist_ok=False)
+    os.makedirs(config.tboard_dir, exist_ok=False)
+    json.dump(
+        config,
+        open(os.path.join(config.snapshot_dir, 'config.json'), 'w'),
+        indent=4,
+    )
+    shutil.copy2('main.py', config.snapshot_dir)
+    shutil.copy2('./dataset/ThreedMatch.py', config.snapshot_dir)
+    shutil.copy2('./model/resunet_spconv.py', os.path.join(config.snapshot_dir, 'model.py'))
 
     ### Create Model ###
     config.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -100,15 +101,17 @@ if __name__ == '__main__':
     ### Create Loss ###
     config.desc_loss = HardestContrastiveLoss(config)
 
-    config.phase = "val"
+    #config.phase = "val"
 
     ### Create Trainer ###
     trainer = Trainer(config)
 
+
+
     if (config.phase == 'train'):
         trainer.train(config.item_type)
     elif (config.phase == 'val'):
-        checkpoint = torch.load('snapshot/05020923/shoe/checkpoints/checkpoint.pth')
+        checkpoint = torch.load('snapshot/05021256/shoe/checkpoints/checkpoint.pth')
         config.model.load_state_dict(checkpoint['state_dict'])
         config.model.eval()
         config.model = config.model.cuda()
